@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: hsl(217, 54%, 11%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main {
+    background-color: hsl(216, 50%, 16%);
+    padding: 25px;
+    border-radius: 20px;box-shadow: -1px 20px 20px 10px rgba(0, 0, 0, 0.56);
+}
+
+
+main .image {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .image::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+    transition: 500ms;
+}
+
+main .image::after {
+    content: url(../images/icon-view.svg);
+    position: absolute;
+    visibility: hidden;
+    transition-delay: 0s;
+}
+
+main .image:hover:before {
+    background-color: hsl(178, 100%, 50%);
+}
+
+main .image:hover::after {
+    visibility: visible;
+    transition-delay: 500ms;
+}
+
+main .image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+main .content {
+    width: 300px;
+}
+
+@media (max-width:767px) {
+    main .image {
+        width: 280px;
+        height: 280px;
+    }
+
+    main .content {
+        width: 280px;
+    }
+}
+
+main .content h2 {
+    color: hsl(0, 0%, 100%);
+    transition: 500ms;
+}
+
+main .content h2:hover {
+    color: hsl(178, 100%, 50%);
+}
+
+main .content h2+p {
+    color: hsl(215, 51%, 70%);
+}
+
+@media (max-width:767px) {
+    main .content h2+p {
+        margin-bottom: 0;
+    }
+}
+
+main .content .details {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .content .details div {
+    display: flex;
+    align-items: center;
+}
+
+main .content .details div:first-of-type p {
+    color: hsl(178, 100%, 50%);
+}
+
+main .content .details div:last-of-type p {
+    color: hsl(215, 51%, 70%);
+}
+
+main .content .details p {
+    margin-left: 8px;
+    font-size: 18px;
+}
+
+main .content hr {
+    border-color: hsl(215, 32%, 27%);
+    color: hsl(215, 32%, 27%);
+}
+
+@media (max-width:767px) {
+    main .content hr {
+        margin: 0;
+    }
+}
+
+main .content footer {
+    display: flex;
+    align-items: center;
+}
+
+main .content footer .port-image {
+    width: 35px;
+    height: 35px;
+    border: solid 1px white;
+    border-radius: 50%;
+}
+
+main .content footer img {
+    width: 100%;
+}
+
+main .content footer p:first-of-type {
+    margin-left: 15px;
+    margin-right: 3px;
+    color: hsl(215, 51%, 70%);
+}
+
+main .content footer p:last-of-type {
+    color: #fff;transition: 500ms;
+}
+
+main .content footer p:last-of-type:hover {
+    color: hsl(178, 100%, 50%);
+}
